@@ -1,0 +1,75 @@
+* {
+    background-image: none;
+    box-shadow: none;
+}
+
+window {
+    background-color: #141414;
+}
+
+button {
+    font-family: "JetBrains Mono";
+    font-size: 14px;
+    color: #E3E6E8;
+    background-color: #1a1b1e;
+    border: 1px solid #45475a;
+    
+    /* Layout */
+    min-width: 260px;
+    padding: 10px 16px;
+    margin: 4px; /* separation between buttons */
+    
+    /* Text handling */
+    text-decoration: none;
+    outline-style: none;
+}
+
+button:focus, button:active, button:hover {
+    border-color: #A2B6C9;
+    background-color: #232529;
+}
+/* ... existing window styling ... */
+
+button {
+    font-family: "JetBrains Mono";
+    font-size: 14px;
+    color: #E3E6E8;
+    background-color: #1a1b1e;
+    border: 1px solid #45475a;
+    
+    /* Make space for the icon on the left */
+    padding-left: 64px; 
+    
+    background-repeat: no-repeat;
+    background-position: 230px center; /* Icon position: x=16px, y=center */
+    background-size: 64px; /* Adjust icon size */
+}
+
+/* Map JSON labels to Image Files */
+
+#lock {
+    background-image: image(url("icons/lock.png"));
+}
+
+#logout {
+    background-image: image(url("icons/logout.png"));
+}
+
+#reboot {
+    background-image: image(url("icons/reboot.png"));
+}
+
+#shutdown {
+    background-image: image(url("icons/shutdown.png"));
+}
+
+/* You are missing icons for these in your folder: */
+#suspend {
+    background-image: none; 
+}
+
+#hibernate {
+    background-image: none;
+}
+
+
