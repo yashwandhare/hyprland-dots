@@ -1,6 +1,6 @@
 show=drun
 allow_images=true
-image_size=24
+image_size=32
 columns=1
 lines=10
 width=700

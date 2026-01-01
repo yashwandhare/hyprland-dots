@@ -1,6 +1,6 @@
 * {
     font-family: JetBrains Mono Nerd Font, JetBrains Mono, sans-serif;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 500;
     color: #E3E6E8; /* Soft Off-White */
     border: none;
@@ -85,7 +85,7 @@ window#waybar {
 }
 
 #pulseaudio.muted {
-    color: #5b606b; /* Dimmed Grey */
+    color: #D98C8C; /* Pastel red */
 }
 
 #network {
@@ -107,4 +107,37 @@ tooltip {
     background: #1a1b1e; 
     border: 1px solid #45475a; 
     color: #A2B6C9;
+}
+#mpris 
+{
+    color: #A2B6C9;
+    padding: 0 10px;
+}
+
+#mpris.paused {
+    color: #7F8490;
+}
+#bluetooth.disabled {
+    color: #5b606b;
+}
+#custom-kdeconnect {
+    color: #7FAE8A; /* Same deep pastel green as battery */
+    padding: 0 10px;
+}
+
+#custom-kdeconnect.disconnected {
+    color: #5b606b;
+}
+/* Battery – full / capped */
+#battery.full,
+#battery.plugged {
+    color: #7FAE8A; /* Deep pastel green */
+}
+
+/* Optional: when NOT charging but plugged (your 80% case) */
+#battery:not(.charging):not(.discharging) {
+    color: #7FAE8A;
+}
+#battery.full.plugged {
+    font-weight: 600;
 }

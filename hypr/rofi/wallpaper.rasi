@@ -1,0 +1,96 @@
+configuration {
+    show-icons: true;
+}
+
+* {
+    background-color: transparent;
+    text-color: #E3E6E8;
+    font: "JetBrains Mono Nerd Font 13";
+    border-radius: 0px;
+    margin: 0px;
+    padding: 0px;
+}
+
+window {
+    width: 50%;
+    height: 50%;
+    location: center;
+    anchor: center;
+    background-color: #141414;
+    border: 1px;
+    border-color: rgba(162, 182, 201, 0.2); 
+}
+
+mainbox {
+    padding: 20px;
+    spacing: 15px;
+    children: [ inputbar, listview ];
+}
+
+inputbar {
+    children: [ prompt, entry ];
+    spacing: 12px;
+    padding: 14px 18px;
+    background-color: #1e1e1e;
+    border: 1px;
+    border-color: rgba(162, 182, 201, 0.2);
+}
+
+prompt {
+    text-color: #A2B6C9; 
+    font: "JetBrains Mono Nerd Font Bold 13";
+}
+
+entry {
+    background-color: transparent;
+    text-color: #E3E6E8;
+    placeholder: "Search Wallpaper...";
+    placeholder-color: #5b606b;
+}
+
+listview {
+    columns: 5; /* Reduced columns to make room for bigger images */
+    lines: 2;   /* Reduced lines to remove the empty space below */
+    spacing: 20px;
+    fixed-height: false; /* Allow dynamic height */
+    padding: 10px;
+}
+
+scrollbar {
+    width: 4px;
+    handle-color: #A2B6C9; 
+    handle-width: 4px;
+    background-color: #1e1e1e;
+}
+
+element {
+    orientation: vertical;
+    padding: 10px;
+    background-color: transparent;
+    border: 1px;
+    border-color: transparent;
+}
+
+element selected.normal {
+    background-color: rgba(162, 182, 201, 0.1); 
+    border-color: #A2B6C9; 
+    text-color: #A2B6C9;
+}
+
+element-icon {
+    size: 150px; /* INCREASED from 100px to 240px */
+    horizontal-align: 0.5;
+    cursor: inherit;
+}
+
+element-text {
+    margin: 10px 0 0 0;
+    horizontal-align: 0.5;
+    text-color: inherit;
+    font: "JetBrains Mono Nerd Font 11";
+}
+
+element selected.normal element-text {
+    text-color: #A2B6C9;
+    font: "JetBrains Mono Nerd Font Bold 11";
+}

@@ -4,49 +4,42 @@
 }
 
 window {
-    background-color: #141414;
+    background-color: #141414; /* Solid Neutral Dark Grey */
 }
 
 button {
-    font-family: "JetBrains Mono";
+    font-family: "JetBrains Mono Nerd Font", "JetBrains Mono";
     font-size: 14px;
-    color: #E3E6E8;
-    background-color: #1a1b1e;
-    border: 1px solid #45475a;
+    border-radius: 0; /* Square corners */
+    
+    /* Colors */
+    color: #E3E6E8; /* Soft Off-White */
+    background-color: #1e1e1e; /* Matches Wofi Input BG */
+    border: 1px solid rgba(162, 182, 201, 0.2); /* Faint Blue Separator */
     
     /* Layout */
     min-width: 260px;
-    padding: 10px 16px;
-    margin: 4px; /* separation between buttons */
+    margin: 5px; /* Separation between buttons */
+    padding: 10px 10px 10px 60px; /* Left padding makes room for icon */
     
-    /* Text handling */
+    /* Icon Positioning */
+    background-repeat: no-repeat;
+    background-position: 240px center; /* Icon fixed to left side */
+    background-size: 55px; /* Clean icon size */
+    
     text-decoration: none;
     outline-style: none;
+    transition: all 0.2s ease;
 }
 
+/* Hover / Active States */
 button:focus, button:active, button:hover {
-    border-color: #A2B6C9;
-    background-color: #232529;
-}
-/* ... existing window styling ... */
-
-button {
-    font-family: "JetBrains Mono";
-    font-size: 14px;
-    color: #E3E6E8;
-    background-color: #1a1b1e;
-    border: 1px solid #45475a;
-    
-    /* Make space for the icon on the left */
-    padding-left: 64px; 
-    
-    background-repeat: no-repeat;
-    background-position: 230px center; /* Icon position: x=16px, y=center */
-    background-size: 64px; /* Adjust icon size */
+    color: #A2B6C9; /* Pastel Steel Blue */
+    background-color: rgba(162, 182, 201, 0.1); /* Faint Blue Tint */
+    border: 1px solid #A2B6C9; /* Accent Border */
 }
 
-/* Map JSON labels to Image Files */
-
+/* Icon Mappings */
 #lock {
     background-image: image(url("icons/lock.png"));
 }
@@ -62,14 +55,9 @@ button {
 #shutdown {
     background-image: image(url("icons/shutdown.png"));
 }
-
-/* You are missing icons for these in your folder: */
-#suspend {
-    background-image: none; 
+#hibernate{
+    background-image: image(url("icons/hibernate.png"));
 }
-
-#hibernate {
-    background-image: none;
+#suspend{
+    background-image: image(url("icons/pause.png"));
 }
-
-

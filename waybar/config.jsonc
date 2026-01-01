@@ -9,10 +9,12 @@
   "spacing": 4,
 
   "modules-left": [
-    "hyprland/workspaces"
+    "hyprland/workspaces",
+    "hyprland/window"
   ],
   "modules-center": [
-    "hyprland/window"
+     "clock",
+    "mpris"
   ],
   "modules-right": [
     "cpu",
@@ -23,7 +25,7 @@
     "network",
     "bluetooth",
     "battery",
-    "clock"
+    "custom/kdeconnect"
   ],
 
   "hyprland/workspaces": {
@@ -57,7 +59,6 @@
   },
 
   "temperature": {
-    // Removed specific hwmon path to allow auto-detection
     "critical-threshold": 80,
     "format": " {temperatureC}°",
     "tooltip": false
@@ -72,16 +73,16 @@
   },
 
   "disk": {
-    "interval": 60,
-    "format": " {percentage_used}%",
-    "path": "/",
-    "on-click": "nautilus",
-    "tooltip": true
-  },
+  "interval": 60,
+  "format": " {percentage_used}%",
+  "path": "/",
+  "tooltip": "{used} / {total}",
+  "on-click": "nautilus"
+},
 
   "pulseaudio": {
     "format": "{icon} {volume}%",
-    "format-muted": " Muted",
+    "format-muted": "Muted",
     "format-icons": {
       "headphone": "",
       "hands-free": "",
@@ -96,13 +97,39 @@
     "on-click-right": "pavucontrol"
   },
 
-  "network": {
-    "format-wifi": "  {signalStrength}%",
-    "format-ethernet": " Wired",
-    "format-disconnected": "⚠ Off",
-    "tooltip-format": "{essid} - {ifname} via {gwaddr}",
-    "on-click": "nm-connection-editor"
+  "mpris": {
+  "format": "{player_icon} {dynamic}",
+  "format-paused": "{player_icon} {dynamic}",
+  "player-icons": {
+    "spotify": "",
+    "vlc": "󰕼",
+    "mpv": "󰐹",
+    "firefox": "",
+    "chromium": "",
+    "default": "󰎈"
   },
+  "dynamic-len": 30,
+  "tooltip": true,
+  "tooltip-format": "{player}: {artist} - {title}",
+  "on-click": "playerctl play-pause",
+  "on-scroll-up": "playerctl next",
+  "on-scroll-down": "playerctl previous",
+  "ignored-players": ["chromium"] 
+},
+  "network": {
+  "format-wifi": "{icon}",
+  "format-ethernet": "",
+  "format-disconnected": "󰤮",
+  "tooltip-format-wifi": "{essid} • {signalStrength}%",
+  "format-icons": [
+    "󰤯",
+    "󰤟",
+    "󰤢",
+    "󰤥",
+    "󰤨"
+  ],
+  "on-click": "nm-connection-editor"
+},
 
   "bluetooth": {
     "format": "",
@@ -115,20 +142,20 @@
   },
 
   "battery": {
-    "states": {
-      "good": 95,
-      "warning": 30,
-      "critical": 15
-    },
-    "format": "{icon} {capacity}%",
-    "format-charging": "⚡ {capacity}%",
-    "format-plugged": " {capacity}%",
-    "format-icons": ["", "", "", "", ""]
+  "states": {
+    "good": 95,
+    "warning": 30,
+    "critical": 15
   },
+  "format": "{icon} {capacity}%",
+  "format-charging": " {capacity}%",
+  "format-plugged": " {capacity}%",
+  "format-icons": ["", "", "", "", ""]
+},
 
   "clock": {
-    "format": " {:%H:%M}",
-    "format-alt": " {:%d %b %Y}",
+    "format": "{:%H:%M}",
+    "format-alt": "{:%d %b %Y}",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "calendar": {
       "mode": "year",
@@ -147,5 +174,11 @@
       "on-scroll-up": "shift_up",
       "on-scroll-down": "shift_down"
     }
-  }
+  },
+  "custom/kdeconnect": {
+  "exec": "~/.config/waybar/scripts/kdeconnect-status.sh",
+  "interval": 5,
+  "on-click": "kdeconnect-app",
+  "tooltip": "KDE Connect"
+} 
 }
