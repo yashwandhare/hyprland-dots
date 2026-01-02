@@ -116,7 +116,7 @@
     "format": "{icon}",
     "format-wifi": "{icon}",
     "format-ethernet": "󰌽",
-    "format-disconnected": "󰌞",
+    "format-disconnected": "󰤮",
     "tooltip-format-wifi": "{essid} • {signalStrength}%",
     "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
     "on-click": "nm-connection-editor"
@@ -197,7 +197,8 @@
   "custom/mic-indicator": {
     "exec": "~/.config/waybar/scripts/mic-indicator.sh",
     "format": "{}",
-    "interval": 1
+    "interval": 1,
+    "return-type": "json"
   },
 
   "custom/mic-muted": {
